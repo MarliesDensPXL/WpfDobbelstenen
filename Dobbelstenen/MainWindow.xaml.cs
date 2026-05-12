@@ -59,5 +59,10 @@ namespace Dobbelstenen
                 e.Cancel = true;
             }
         }
+
+        private void OnCloseButtonClicked(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

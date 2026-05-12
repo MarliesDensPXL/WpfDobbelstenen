@@ -24,11 +24,11 @@
             <Button Content="Roll the dice! (a lot...)"  DockPanel.Dock="Top" Background="#FFFF7700" Margin="10" Height="25"/>
             <Slider DockPanel.Dock="Top" Margin="10"/>
             <Label Content="40" HorizontalContentAlignment="Center" DockPanel.Dock="Top"  x:Name="numberOfRollsLabel"/>
-            <Button Content="Afsluiten" DockPanel.Dock="Bottom" Margin="10" Background="#FFFF7700" Height="25"/>
+            <Button Content="Afsluiten" DockPanel.Dock="Bottom" Margin="10" Background="#FFFF7700" Height="25" Click="OnCloseButtonClicked"/>
 
         </DockPanel>
         <GroupBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" BorderThickness="3" BorderBrush="#FFFF7700" Header="Resultaten simulatie" >
-            <Grid x:Name="resultGrid">
+            <Grid x:Name="resultGrid" Margin="2">
                 <Grid.RowDefinitions>
                     <RowDefinition/>
                     <RowDefinition/>
@@ -45,8 +45,8 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
 
-                <Label Grid.Row="1" Grid.Column="0" Content="Som dobbelstenen 2: " VerticalAlignment="Center"/>
-                <TextBox Grid.Row="1" Grid.Column="1" x:Name="result2TextBox" Text="0" Width="40" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                <Label Grid.Row="1" Grid.Column="0" Content="Som dobbelstenen 2: " VerticalAlignment="Center" />
+                <TextBox Grid.Row="1" Grid.Column="1" x:Name="result2TextBox" Text="0" Width="40" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" />
                 <Label Grid.Row="2" Grid.Column="0" Content="Som dobbelstenen 3: " VerticalAlignment="Center"/>
                 <TextBox Grid.Row="2" Grid.Column="1" x:Name="result3TextBox" Text="0" Width="40" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
                 <Label Grid.Row="3" Grid.Column="0" Content="Som dobbelstenen 4: " VerticalAlignment="Center"/>
