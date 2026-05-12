@@ -16,9 +16,48 @@ namespace Dobbelstenen
     /// </summary>
     public partial class MainWindow : Window
     {
+        Random rng = new Random();
+        
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        public int[] RollDices()
+        {
+            int[] dicesRolled = new int[2];
+
+            dicesRolled[0] = rng.Next(1, 7);
+            dicesRolled[1] = rng.Next(1, 7);
+
+            return dicesRolled;
+        }
+
+        public void DisplayDices(int[] rolledDices)
+        {
+            int image1 = rolledDices[0];
+            int image2 = rolledDices[1];
+
+            firstDiceImage.Source = new BitmapImage(new Uri($"Images/dice-{image1}.png", UriKind.Relative));
+            firstDiceImage.Stretch = Stretch.Uniform;
+
+            secondDiceImage.Source = new BitmapImage(new Uri($"Images/dice-{image2}.png", UriKind.Relative));
+            secondDiceImage.Stretch = Stretch.Uniform;
+        }
+
+        private void OnRollOnceClicked(object sender, RoutedEventArgs e)
+        {
+            int[] rolledDices = RollDices();
+            DisplayDices(rolledDices);            
+        }
+
+        private void OnWindowClosing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            MessageBoxResult result = MessageBox.Show("Wil je afsluiten?", "Afsluiten", MessageBoxButton.OKCancel, MessageBoxImage.Question);
+            if (result == MessageBoxResult.Cancel)
+            {
+                e.Cancel = true;
+            }
         }
     }
 }

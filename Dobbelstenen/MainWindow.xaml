@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Dobbelstenen"
         mc:Ignorable="d"
-        Title="🎲🎲 Dobbelstenen 🎲🎲" Height="500" Width="600">
+        Title="🎲🎲 Dobbelstenen 🎲🎲" Height="500" Width="600" Closing="OnWindowClosing">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -19,11 +19,11 @@
 
         <Image Grid.Row="0" Grid.Column="0" x:Name="firstDiceImage" Source="/Images/dice-1.png" Margin="10" />
         <Image Grid.Row="0" Grid.Column="1" x:Name="secondDiceImage"  Source="/Images/dice-1.png" Margin="10"/>
-        <DockPanel Grid.Row="0" Grid.Column="2" Grid.RowSpan="2" >
-            <Button Content="Roll the dice! (only once)" DockPanel.Dock="Top" Background="#FFFF7700" Margin="10" Height="25"/>
+        <DockPanel Grid.Row="0" Grid.Column="2" Grid.RowSpan="2" LastChildFill="false" >
+            <Button Content="Roll the dice! (only once)" DockPanel.Dock="Top" Background="#FFFF7700" Margin="10" Height="25" Click="OnRollOnceClicked"/>
             <Button Content="Roll the dice! (a lot...)"  DockPanel.Dock="Top" Background="#FFFF7700" Margin="10" Height="25"/>
             <Slider DockPanel.Dock="Top" Margin="10"/>
-            <Label Content="40" HorizontalContentAlignment="Center" DockPanel.Dock="Top" Height="250" x:Name="numberOfRollsLabel"/>
+            <Label Content="40" HorizontalContentAlignment="Center" DockPanel.Dock="Top"  x:Name="numberOfRollsLabel"/>
             <Button Content="Afsluiten" DockPanel.Dock="Bottom" Margin="10" Background="#FFFF7700" Height="25"/>
 
         </DockPanel>
