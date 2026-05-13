@@ -21,9 +21,9 @@
         <Image Grid.Row="0" Grid.Column="1" x:Name="secondDiceImage"  Source="/Images/dice-1.png" Margin="10"/>
         <DockPanel Grid.Row="0" Grid.Column="2" Grid.RowSpan="2" LastChildFill="false" >
             <Button Content="Roll the dice! (only once)" DockPanel.Dock="Top" Background="#FFFF7700" Margin="10" Height="25" Click="OnRollOnceClicked"/>
-            <Button Content="Roll the dice! (a lot...)"  DockPanel.Dock="Top" Background="#FFFF7700" Margin="10" Height="25"/>
-            <Slider DockPanel.Dock="Top" Margin="10"/>
-            <Label Content="40" HorizontalContentAlignment="Center" DockPanel.Dock="Top"  x:Name="numberOfRollsLabel"/>
+            <Button Content="Roll the dice! (a lot...)"  DockPanel.Dock="Top" Background="#FFFF7700" Margin="10" Height="25" Click="OnRollALotClicked"/>
+            <Slider  DockPanel.Dock="Top" x:Name="numberOfRollsSlider"  Minimum="0" Maximum="100" Value="20" TickFrequency="5" IsSnapToTickEnabled="true" ValueChanged="OnValueSliderChanged" Margin="10"/>
+            <Label x:Name="numberOfRollsLabel"  HorizontalContentAlignment="Center" DockPanel.Dock="Top" Content="20" Margin="10" />
             <Button Content="Afsluiten" DockPanel.Dock="Bottom" Margin="10" Background="#FFFF7700" Height="25" Click="OnCloseButtonClicked"/>
 
         </DockPanel>
